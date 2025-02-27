@@ -1,0 +1,264 @@
+/* LoveLetter.css */
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #fff0f6;
+}
+
+.envelope {
+  position: relative;
+  width: 320px;
+  
+  height: 200px;
+  background: linear-gradient(to bottom, #fce9d4 60%, #f8d8b2);
+  border-radius: 12px;
+  border: 4px solid #8b5e3b;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 5px 5px 12px rgba(0, 0, 0, 0.3);
+}
+
+.envelope.opened {
+  opacity: 0;
+  transform: translateY(-50px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.flap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100px; /* Make it slightly bigger */
+  background: linear-gradient(to bottom, #d4a076, #b87333);
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  transform: rotate(180deg); /* Rotates the triangle to face down */
+}
+
+
+.body {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 140px;
+  background-color: #fce9d4;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+
+.seal {
+  position: absolute;
+  bottom: 10px;
+  width: 60px;
+  height: 60px;
+  background-color: #e63946;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  color: white;
+  border: 4px solid #8b5e3b;
+  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+
+.seal:hover {
+  transform: scale(1.15);
+}
+
+.letter {
+  position: absolute;
+  width: 700px;
+  height: 600px;
+  background: #fff;
+  border: 3px solid #8b5e3b;
+  padding: 20px;
+  border-radius: 12px;
+  margin-top: 300px;
+  text-align: center;
+  font-family: "Cursive", sans-serif;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.letter p {
+  margin: 15px 0;
+  font-size: 18px;
+}
+
+.letter-heading {
+  font-size: 22px;
+  font-weight: bold;
+  color: #d72638;
+}
+
+.letter-content {
+  font-size: 18px;
+  font-style: italic;
+  color: #333;
+}
+
+.letter-signature {
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 20px;
+  color: #8b5e3b;
+}
+
+.floating-hearts {
+  margin-top: 15px;
+  font-size: 24px;
+  animation: float 1.5s infinite alternate ease-in-out;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-8px);
+  }
+}
+/* Ensure the flap rotates naturally */
+.flap {
+
+  transition: transform 0.4s ease-in-out;
+}
+
+/* Smooth flap opening effect */
+.envelope.opened .flap {
+  transform: rotateX(180deg);
+  transition: transform 0.6s ease-in-out;
+}
+
+/* Add depth to the envelope */
+.envelope {
+  box-shadow: 7px 7px 14px rgba(0, 0, 0, 0.25);
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.envelope:hover {
+  box-shadow: 10px 10px 18px rgba(0, 0, 0, 0.35);
+}
+
+/* Add depth effect inside */
+.body {
+  box-shadow: inset 0px -6px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Improve seal interaction */
+.seal {
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  animation: sealBounce 1.5s infinite alternate ease-in-out;
+}
+
+/* Slight bounce effect */
+@keyframes sealBounce {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-2px);
+  }
+}
+
+/* Seal hover glow effect */
+.seal:hover {
+  transform: scale(1.2);
+  box-shadow: 0px 0px 15px rgba(230, 57, 70, 0.8);
+}
+
+/* Improve letter transition */
+.letter {
+  transition: opacity 1s ease, transform 1s ease, box-shadow 0.5s ease-in-out;
+}
+
+.letter:hover {
+  box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Softer floating hearts animation */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(-5px);
+    opacity: 1;
+  }
+}
+@media (max-width: 768px) {
+  .envelope {
+    max-width: 280px;
+  }
+
+  .seal {
+    max-width: 50px;
+    font-size: 1.5rem;
+  }
+
+  .letter {
+    max-width: 280px;
+  }
+}
+
+/* Phones */
+@media (max-width: 480px) {
+  .envelope {
+    max-width: 250px;
+  }
+
+  .seal {
+    max-width: 45px;
+    font-size: 1.3rem;
+  }
+
+  .letter {
+    max-width: 250px;
+  }
+
+  .letter p {
+    font-size: 0.9rem;
+  }
+
+  .letter-heading {
+    font-size: 1rem;
+  }
+
+  .letter-content {
+    font-size: 0.9rem;
+  }
+}
+
+/* Large Screens */
+@media (min-width: 1200px) {
+  .envelope {
+    max-width: 400px;
+  }
+
+  .seal {
+    max-width: 70px;
+    font-size: 2rem;
+  }
+
+  .letter {
+    max-width: 400px;
+  }
+
+  .letter p {
+    font-size: 1.2rem;
+  }
+
+  .letter-heading {
+    font-size: 1.4rem;
+  }
+}
