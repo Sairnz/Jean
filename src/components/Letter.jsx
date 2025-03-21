@@ -37,35 +37,39 @@
             <p style={{ textAlign: "center", fontWeight: "bold" }}>Abish</p><br />
 
             <p style={{ textAlign: "justify" }}>
-              You can have bad days so you can adore the good days even more.
-            </p>
+            I never knew silence could feel so loud,
+            until the days without you came around.
+            Through every storm, through wind and rain,
+            I ache to hear your voice again.  
+          </p>
 
-            <p style={{ textAlign: "justify" }}>
-              Through every storm, through wind and rain,  
-              I would choose to adore you just the same.  
-              For even in the darkest skies,  
-              your eyes still shine, your light still thrives.
-            </p>
+          <p style={{ textAlign: "justify" }}>
+            The world may shift, the seasons turn,
+            yet for your presence, my heart will yearn.
+            Through empty nights and endless days,
+            I miss you more than words can say. 
+          </p>
 
-            <p style={{ textAlign: "justify" }}>
-              The world may shift, the seasons turn,  
-              yet for your warmth, my heart will yearn.  
-              Through highs and lows, through joy and pain,  
-              I will hold you close, time and again.
-            </p>
+          <p style={{ textAlign: "justify" }}>
+            Though time has passed, my heart still beats,  
+            waiting for the day we meet.  
+            No distance wide, no hours apart,  
+            could ever steal you from my heart.  
+          </p>
 
-            <p style={{ textAlign: "justify" }}>
-              No fleeting days, no passing years—  
-              nothing can take the affection I cherish so deeply.  
-              For you are my heart, my sweetest song,  
-              the place where I have always belonged.
-            </p>
-            <br />
+          <p style={{ textAlign: "justify" }}>
+            So here I stand, through dusk and dawn,  
+            longing for where we belong.  
+            For though the silence kept us far,  
+            my love still lingers where you are.  
+          </p>
+          <br />
 
-            <p style={{ textAlign: "right", marginTop: "20px" }}>
-              Yours truly,<br />
-              Sai
-            </p>
+          <p style={{ textAlign: "right", marginTop: "20px" }}>
+            Yours truly,<br />
+            Sai
+          </p>
+
 
             <div className="floating-hearts"></div>
           </motion.div>
