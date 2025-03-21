@@ -61,13 +61,13 @@
             So here I stand, through dusk and dawn,  
             longing for where we belong.  
             For though the silence kept us far,  
-            my love still lingers where you are.  
+            my heart still whispers where you are  
           </p>
           <br />
 
           <p style={{ textAlign: "right", marginTop: "20px" }}>
             Yours truly,<br />
-            Sai
+            Z
           </p>
 
 
