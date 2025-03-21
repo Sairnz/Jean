@@ -15,7 +15,7 @@
   height: 200px;
   background: linear-gradient(to bottom, #fce9d4 60%, #f8d8b2);
   border-radius: 12px;
-  border: 4px solid #8b5e3b;
+  border: 4px solid #950638;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -34,7 +34,7 @@
   left: 0;
   width: 100%;
   height: 100px; /* Make it slightly bigger */
-  background: linear-gradient(to bottom, #d4a076, #b87333);
+  background: linear-gradient(to bottom, #df0475, #ec0263);
   clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
   transform: rotate(180deg); /* Rotates the triangle to face down */
 }
@@ -261,4 +261,90 @@
   .letter-heading {
     font-size: 1.4rem;
   }
+}
+
+/* Improved Envelope Design */
+.envelope {
+  position: relative;
+  width: 320px;
+  height: 200px;
+  background: linear-gradient(to bottom, #fce9d4 60%, #f8d8b2);
+  border-radius: 12px;
+  border: 4px solid #8b5e3b;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.3);
+  transition: box-shadow 0.3s ease-in-out;
+  overflow: hidden;
+}
+
+/* Adding Paper Texture */
+.envelope::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.3), transparent);
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Flap Improvement */
+.flap {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100px;
+  background: linear-gradient(to bottom, #b45506, #f65504);
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  transition: transform 0.5s ease-in-out, box-shadow 0.3s ease-in-out;
+  z-index: 2;
+}
+
+/* Flap Opens Smoothly */
+.envelope.opened .flap {
+  transform: rotateX(180deg);
+  box-shadow: inset 0px -5px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Seal Improvement */
+.seal {
+  position: absolute;
+  bottom: 20px;
+  width: 60px;
+  height: 60px;
+  background: radial-gradient(circle, #e63946, #c62a3f);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  color: white;
+  border: 4px solid #8b5e3b;
+  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Seal Glows on Hover */
+.seal:hover {
+  transform: scale(1.2);
+  box-shadow: 0px 0px 15px rgba(230, 57, 70, 0.8);
+}
+
+/* Paper Inside */
+.body {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 140px;
+  background-color: #fce9d4;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+  box-shadow: inset 0px -6px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Add a smooth transition to the envelope */
+.envelope:hover {
+  box-shadow: 12px 12px 25px rgba(0, 0, 0, 0.4);
 }
