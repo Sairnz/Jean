@@ -37,7 +37,7 @@ const Letter = () => {
 
           {/* Image Above Name */}
           <img
-            src="./src/assets/aly.png" // Update this path if needed
+            src="/aly.png"  // ✅ This is the correct path for public files
             alt="Aly"
             style={{
               display: "block",
