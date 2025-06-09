@@ -1,81 +1,91 @@
-  import { useState } from "react";
-  import { motion } from "framer-motion";
-  import "./Letter.css";
+import { useState } from "react";
+import { motion } from "framer-motion";
+import "./Letter.css";
 
-  const Letter = () => {
-    const [isOpened, setIsOpened] = useState(false);
+const Letter = () => {
+  const [isOpened, setIsOpened] = useState(false);
 
-    return (
-      <div className="container">
-        {/* Envelope */}
+  return (
+    <div className="container">
+      {/* Envelope */}
+      <motion.div
+        className={`envelope ${isOpened ? "opened" : ""}`}
+        animate={isOpened ? { y: -100, opacity: 0 } : { y: 0, opacity: 1 }}
+        transition={{ duration: 0.5 }}
+      >
+        <div className="flap"></div>
+        <div className="body"></div>
         <motion.div
-          className={`envelope ${isOpened ? "opened" : ""}`}
-          animate={isOpened ? { y: -100, opacity: 0 } : { y: 0, opacity: 1 }}
-          transition={{ duration: 0.5 }}
+          className="seal"
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }}
+          onClick={() => setIsOpened(true)}
         >
-          <div className="flap"></div>
-          <div className="body"></div>
-          <motion.div
-            className="seal"
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-            onClick={() => setIsOpened(true)}
-          >
-            🤍
-          </motion.div>
+          💛
         </motion.div>
+      </motion.div>
 
-        {/* Letter */}
-        {isOpened && (
-          <motion.div
-            className="letter"
-            initial={{ y: 0, opacity: 0 }}
-            animate={{ y: -180, opacity: 1 }}
-            transition={{ duration: 1 }}
-          >
-            <br />
-            <p style={{ textAlign: "center", fontWeight: "bold" }}>Abish</p><br />
+      {/* Letter */}
+      {isOpened && (
+        <motion.div
+          className="letter"
+          initial={{ y: 0, opacity: 0 }}
+          animate={{ y: -180, opacity: 1 }}
+          transition={{ duration: 1 }}
+        >
+          <br />
 
-            <p style={{ textAlign: "justify" }}>
-            I never knew silence could feel so loud,
-            until the days without you came around.
-            Through every storm, through wind and rain,
-            I ache to hear your voice again.  
+          {/* Image Above Name */}
+          <img
+            src="./src/assets/aly.png" // Update this path if needed
+            alt="Aly"
+            style={{
+              display: "block",
+              margin: "0 auto",
+              width: "120px",
+              borderRadius: "10px",
+              boxShadow: "0 4px 10px rgba(0, 0, 0, 0.1)"
+            }}
+          />
+
+          <p style={{ textAlign: "center", fontWeight: "bold", marginTop: "10px" }}>
+            Aly
+          </p>
+          <br />
+
+          <p style={{ textAlign: "justify" }}>
+            Happy Birthday, <strong>Pretty Aly</strong>, today’s your day,  
+            A time to laugh, to dance, to play.
+            But more than that, I want to say,
+            You brighten my day like our favorite games do.
           </p>
 
           <p style={{ textAlign: "justify" }}>
-            The world may shift, the seasons turn,
-            yet for your presence, my heart will yearn.
-            Through empty nights and endless days,
-            I miss you more than words can say. 
+            When we play games, you make me smile,
+            With every joke, each fun-filled while.
+            Your laughter feels like sunshine near,
+            A sound my heart is glad to hear.
           </p>
 
           <p style={{ textAlign: "justify" }}>
-            Though time has passed, my heart still beats,  
-            waiting for the day we meet.  
-            No distance wide, no hours apart,  
-            could ever steal you from my heart.  
+            In every talk, both deep and small,
+            You lift me up, you calm it all.
+            You make the quiet moments glow,
+            With warmth you may not even know.
           </p>
-
-          <p style={{ textAlign: "justify" }}>
-            So here I stand, through dusk and dawn,  
-            longing for where we belong.  
-            For though the silence kept us far,  
-            my heart still whispers where you are  
-          </p>
+          
           <br />
 
           <p style={{ textAlign: "right", marginTop: "20px" }}>
             Yours truly,<br />
-            Z
+            xxx
           </p>
 
+          <div className="floating-hearts"></div>
+        </motion.div>
+      )}
+    </div>
+  );
+};
 
-            <div className="floating-hearts"></div>
-          </motion.div>
-        )}
-      </div>
-    );
-  };
-
-  export default Letter;
+export default Letter;
