@@ -7,7 +7,6 @@ const Letter = () => {
 
   return (
     <div className="container">
-      {/* Envelope */}
       <motion.div
         className={`envelope ${isOpened ? "opened" : ""}`}
         animate={isOpened ? { y: -100, opacity: 0 } : { y: 0, opacity: 1 }}
@@ -21,11 +20,10 @@ const Letter = () => {
           whileTap={{ scale: 0.9 }}
           onClick={() => setIsOpened(true)}
         >
-          💛
+          ❤️
         </motion.div>
       </motion.div>
 
-      {/* Letter */}
       {isOpened && (
         <motion.div
           className="letter"
@@ -33,55 +31,40 @@ const Letter = () => {
           animate={{ y: -180, opacity: 1 }}
           transition={{ duration: 1 }}
         >
-          <br />
+          <p className="letter-heading">To My Dearest Jean,</p>
 
-          {/* Image Above Name */}
-          <img
-            src="/aly.png"  // ✅ This is the correct path for public files
-            alt="Aly"
-            style={{
-              display: "block",
-              margin: "0 auto",
-              width: "120px",
-              borderRadius: "10px",
-              boxShadow: "0 4px 10px rgba(0, 0, 0, 0.1)"
-            }}
-          />
-
-          <p style={{ textAlign: "center", fontWeight: "bold", marginTop: "10px" }}>
-            Aly
-          </p>
-          <br />
-
-          <p style={{ textAlign: "justify" }}>
-            Happy Birthday, <strong>Pretty Aly</strong>, today’s your day,  
-            A time to laugh, to dance, to play.
-            But more than that, I want to say,
-            You brighten my day like our favorite games do.
+          <p className="letter-content">
+            There’s a spark that ignites in my heart, <br />
+            The moment you entered my life. <br />
+            In just a few days, you’ve changed everything <br />
+            And my soul is grateful for it.
           </p>
 
-          <p style={{ textAlign: "justify" }}>
-            When we play games, you make me smile,
-            With every joke, each fun-filled while.
-            Your laughter feels like sunshine near,
-            A sound my heart is glad to hear.
+          <p className="letter-content">
+            Your presence brings me peace and joy, <br />
+            And in your understanding, I find solace. <br />
+            I can speak without words, <br />
+            And still, you listen—this rare connection we share.
           </p>
 
-          <p style={{ textAlign: "justify" }}>
-            In every talk, both deep and small,
-            You lift me up, you calm it all.
-            You make the quiet moments glow,
-            With warmth you may not even know.
-          </p>
-          
-          <br />
-
-          <p style={{ textAlign: "right", marginTop: "20px" }}>
-            Yours truly,<br />
-            xxx
+          <p className="letter-content">
+            I want to know you more, <br />
+            Beyond the laughter, beyond the moments, <br />
+            The depth of your heart and the stories you hold, <br />
+            Everything that makes you who you are.
           </p>
 
-          <div className="floating-hearts"></div>
+          <p className="letter-content">
+            Know, my love, that I am here, always, <br />
+            To listen, to support, to stand by you. <br />
+            When life weighs heavy, I will be your strength, <br />
+            Ready to help, ready to love, unconditionally.
+          </p>
+
+          <p className="letter-signature">
+            With all my heart, <br />
+            Sai
+          </p>
         </motion.div>
       )}
     </div>
