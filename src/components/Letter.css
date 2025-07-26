@@ -76,7 +76,7 @@
 .letter {
   position: absolute;
   width: 800px;  /* Increased width for more space */
-  height: 600px; 
+  height: 700px; 
   background: #fff;
   border: 3px solid #4f8a8b; /* Soft teal border */
   padding: 30px;  /* Increased padding for better spacing */
